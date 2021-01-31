@@ -43,11 +43,14 @@ public class Etat {
 		return parcours.getParcours();
     }
 	
+	/* Méthode testPerdu permettant de vérifier si l'ovale sors de la ligne brisée ou non en comparant l'ordonnée de la pente et le point du dessus et du dessous de l'ovale */
+	
 	public boolean testPerdu() {
+		/* On regarde entre les 2 premiers points de la liste (la ou se situera toujours l'ovale */
 		Point p1 = getParcours().get(0);
 		Point p2 = getParcours().get(1);
-		float pente = ((p1.y) - (p2.y) )/ ((float)(p1.x) - (float)(p2.x));
-		float y = p1.y - pente * (p1.x - Affichage.X_OVAL-20);
+		float pente = ((p1.y) - (p2.y) )/ ((float)(p1.x) - (float)(p2.x)); /* Formule de calcule de la pente de la ligne */
+		float y = p1.y - pente * (p1.x - Affichage.MIDX_OVAL); /* Formule de calcule de l'ordonnée de la pente entre 2 points */
 		//System.out.println(y);
 		if(y < hauteur || y > hauteur + Affichage.HAUT_OVAL) {
 			return true;
