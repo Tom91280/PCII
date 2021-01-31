@@ -4,19 +4,20 @@ public class Stop extends Thread {
 	
 	private Etat etat;
 	
-	/* Constructeur de la classe Voler */
+	/* Constructeur de la classe Stop */
 	
 	public Stop(Etat etat) {
 		this.etat = etat;
 	}
 	
-	/* Méthode run permettant de faire avancer la ligne brisée lorsqu'elle est appeler dans le main */
+	/* Méthode run permettant d'arrêter le jeu quand l'ovale sors de la ligne brisée */
 	
 	@Override
 	public void run() {
-		while(true) {
+		while(Affichage.boucle) {
 			if(etat.testPerdu()) {
 				JOptionPane.showMessageDialog(null,"Votre score est de : " + Parcours.position,"GAME OVER",JOptionPane.PLAIN_MESSAGE);
+				Affichage.boucle = false;
 			}	
 			try {
 				Thread.sleep(500);
