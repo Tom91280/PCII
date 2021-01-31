@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
@@ -18,7 +19,7 @@ public class Affichage extends JPanel {
         public static final int MID_LARG = LARG/2;
         public static final int H_SCORE = 20;
         
-        private String score = "Score :"; /* J'ai voulu rajouter + parcours.getPosition() sauf que le jeu plante pour l'affichage du nombre */
+        //private String score = "Score :" + parcours.getPosition() ; /* J'ai voulu rajouter + parcours.getPosition() sauf que le jeu plante pour l'affichage du nombre */
         
         
         /* Constructeur de la classe Affichage */
@@ -33,13 +34,24 @@ public class Affichage extends JPanel {
         @Override
         public void paint(Graphics g) {
         	super.paint(g);
+        
+        	paintOval(g);
+        	paintLigne(g);
+            //g.drawString(score , MID_LARG, H_SCORE);
+        }
+        
+        public void paintOval(Graphics g) {
         	/* Affichage ovale */
+        	g.setColor(Color.blue);
         	g.drawOval(X_OVAL,etat.getHauteur(),LARG_OVAL,HAUT_OVAL);
+        }
+        
+        public void paintLigne(Graphics g) {
         	/* Affichage lignes */
+        	g.setColor(Color.red);
         	for(int i=0;i<etat.getParcours().size()-1;i++) {
                 g.drawLine(etat.getParcours().get(i).x,etat.getParcours().get(i).y,etat.getParcours().get(i+1).x,etat.getParcours().get(i+1).y);
             }
-            g.drawString(score , MID_LARG, H_SCORE);
         }
         
 }
