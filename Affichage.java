@@ -16,6 +16,8 @@ public class Affichage extends JPanel {
         public static final int LARG_OVAL = 40;
         public static final int HAUT_OVAL = 80;
         
+        public static final int MIDX_OVAL = X_OVAL + (LARG_OVAL/2);
+        
         public static final int MID_LARG = LARG/2;
         public static final int H_SCORE = 20;
         
@@ -39,17 +41,17 @@ public class Affichage extends JPanel {
         
         	paintOval(g);
         	paintLigne(g);
-            //g.drawString(score , MID_LARG, H_SCORE);
+            //g.drawString(score , MID_LARG, H_SCORE); /* affichage du score en partie */
         }
         
         public void paintOval(Graphics g) {
-        	/* Affichage ovale */
+        	/* Affichage ovale bleu*/
         	g.setColor(Color.blue);
         	g.drawOval(X_OVAL,etat.getHauteur(),LARG_OVAL,HAUT_OVAL);
         }
         
         public void paintLigne(Graphics g) {
-        	/* Affichage lignes */
+        	/* Affichage lignes avec couleur rouge*/
         	g.setColor(Color.red);
         	for(int i=0;i<etat.getParcours().size()-1;i++) {
                 g.drawLine(etat.getParcours().get(i).x,etat.getParcours().get(i).y,etat.getParcours().get(i+1).x,etat.getParcours().get(i+1).y);
