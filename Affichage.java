@@ -40,8 +40,8 @@ public class Affichage extends JPanel {
         public void paint(Graphics g) {
         	super.paint(g);
         
-        	paintOval(g);
         	paintLigne(g);
+        	paintOval(g);
             //g.drawString(score , MID_LARG, H_SCORE); /* affichage du score en partie */
         }
         
@@ -50,7 +50,7 @@ public class Affichage extends JPanel {
         public void paintOval(Graphics g) {
         	/* Affichage ovale bleu*/
         	g.setColor(Color.blue);
-        	g.drawOval(X_OVAL,etat.getHauteur(),LARG_OVAL,HAUT_OVAL);
+        	g.fillOval(X_OVAL,etat.getHauteur(),LARG_OVAL,HAUT_OVAL);
         }
         
         /* Fonction paintOval permettant de tracer notre ligne */
