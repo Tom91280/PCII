@@ -18,16 +18,20 @@ public class Main {
         jeu.setVisible(true);
         
         /* Ajout de notre méthode pour pouvoir faire sauter notre ovale */
-        
-        affichage.addMouseListener(control);
-        
-        /* Ajout de notre thread permettant de faire redescendre notre ovale tout les x temps */
-        
-        (new Thread(new Voler(etat, affichage))).start();
-        
-        /* Ajout de notre thread permettant de faire avancer la ligne brisée tout les x temps */
-        
-        (new Thread(new Avancer(affichage, parcours))).start();
-        
+
+	    affichage.addMouseListener(control);
+	        
+	    /* Ajout de notre thread permettant de faire redescendre notre ovale tout les x temps */
+	        
+	    (new Thread(new Voler(etat, affichage))).start();
+	        
+	    /* Ajout de notre thread permettant de faire avancer la ligne brisée tout les x temps */
+	        
+	    (new Thread(new Avancer(affichage, parcours))).start();
+	    
+	    /* Ajout de notre thread permettant de vérifier qu'on ne perd pas */
+	    
+	    (new Thread(new Stop(etat))).start();
+ 
 	}
 }
