@@ -14,11 +14,10 @@ public class Avancer extends Thread {
 	
 	@Override
 	public void run() {
-		while(true) {
+		while(Affichage.boucle) {
 			parcours.setPosition();
 			affichage.revalidate();
-			affichage.repaint();
-			/* System.out.println(parcours.getParcours() + "/n"); (je vérifiais que le premier élément de la liste sois bien supprimer à chaque fois */			
+			affichage.repaint();		
 			try {
 				Thread.sleep(200);
 			} catch (Exception e){
