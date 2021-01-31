@@ -6,11 +6,11 @@ import javax.swing.JPanel;
 
 public class Affichage extends JPanel {
 
-		private Etat etat;
-	    //private Parcours parcours;
+	private Etat etat;
+	//private Parcours parcours;
 	
-		private static final long serialVersionUID = 1L;
-		public static final int LARG = 600;
+	private static final long serialVersionUID = 1L;
+	public static final int LARG = 600;
         public static final int HAUT = 400;
         public static final int X_OVAL = 5;
         public static final int LARG_OVAL = 40;
