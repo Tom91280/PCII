@@ -14,7 +14,7 @@ public class Voler extends Thread {
 	
 	@Override
 	public void run() {
-		while(true) {
+		while(Affichage.boucle) {
 			etat.moveDown();
 			affichage.revalidate();
 			affichage.repaint();
