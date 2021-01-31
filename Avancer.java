@@ -3,6 +3,8 @@ public class Avancer extends Thread {
 	private Affichage affichage;
 	private Parcours parcours;
 	
+	public int timer = 200;
+	
 	/* Constructeur de la classe Voler */
 	
 	public Avancer(Affichage affichage, Parcours parcours) {
@@ -19,7 +21,7 @@ public class Avancer extends Thread {
 			affichage.revalidate();
 			affichage.repaint();		
 			try {
-				Thread.sleep(200);
+				Thread.sleep(timer);
 			} catch (Exception e){
 				e.printStackTrace();
 			}
