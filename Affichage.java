@@ -6,11 +6,11 @@ import javax.swing.JPanel;
 
 public class Affichage extends JPanel {
 
-	private Etat etat;
-	//private Parcours parcours;
+		private Etat etat;
+	    //private Parcours parcours;
 	
-	private static final long serialVersionUID = 1L;
-	public static final int LARG = 600;
+		private static final long serialVersionUID = 1L;
+		public static final int LARG = 600;
         public static final int HAUT = 400;
         public static final int X_OVAL = 5;
         public static final int LARG_OVAL = 40;
@@ -21,6 +21,7 @@ public class Affichage extends JPanel {
         //public static final int MID_LARG = LARG/2;
         //public static final int H_SCORE = 20;
         
+        /* Variable permettant d'activer les Threads */
         public static boolean boucle = true;
         
         //private String score = "Score :" + parcours.getPosition() ; /* J'ai voulu rajouter + parcours.getPosition() sauf que le jeu plante pour l'affichage du nombre */
