@@ -18,8 +18,8 @@ public class Affichage extends JPanel {
         
         public static final int MIDX_OVAL = X_OVAL + (LARG_OVAL/2);
         
-        public static final int MID_LARG = LARG/2;
-        public static final int H_SCORE = 20;
+        //public static final int MID_LARG = LARG/2;
+        //public static final int H_SCORE = 20;
         
         public static boolean boucle = true;
         
@@ -33,7 +33,7 @@ public class Affichage extends JPanel {
             setPreferredSize(new Dimension(LARG, HAUT));
         }
         
-        /* Fonction paint permetant de tracer notre ovale ainsi que nos lignes */
+        /* Fonction paint permettant de tracer notre ovale ainsi que nos lignes */
         
         @Override
         public void paint(Graphics g) {
@@ -44,11 +44,15 @@ public class Affichage extends JPanel {
             //g.drawString(score , MID_LARG, H_SCORE); /* affichage du score en partie */
         }
         
+        /* Fonction paintOval permettant de tracer notre ovale */
+        
         public void paintOval(Graphics g) {
         	/* Affichage ovale bleu*/
         	g.setColor(Color.blue);
         	g.drawOval(X_OVAL,etat.getHauteur(),LARG_OVAL,HAUT_OVAL);
         }
+        
+        /* Fonction paintOval permettant de tracer notre ligne */
         
         public void paintLigne(Graphics g) {
         	/* Affichage lignes avec couleur rouge*/
