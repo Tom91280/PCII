@@ -3,6 +3,9 @@ public class Voler extends Thread {
 	private Etat etat;
 	private Affichage affichage;
 	
+	/* L'ovale tombe tout les "timer" temps (en ms) */
+	public int timer = 300;
+	
 	/* Constructeur de la classe Voler */
 	
 	public Voler(Etat etat, Affichage affichage) {
@@ -19,7 +22,7 @@ public class Voler extends Thread {
 			affichage.revalidate();
 			affichage.repaint();
 			try {
-				Thread.sleep(300);
+				Thread.sleep(timer);
 			} catch (Exception e){
 				e.printStackTrace();
 			}
