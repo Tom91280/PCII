@@ -12,13 +12,17 @@ public class Parcours {
 	private final int POSAV = 10; 
 	private final int ESPACE = 100;
 	
+	public int MIDY_OVAL = 360;
+	
 	private Random r = new Random();
 	
 	/* Constructeur de la classe Parcours */
 	
 	public Parcours() {
-		/* On initialise le premier point correspond au centre de l'ovale */
-        points.add(new Point(25, 360));
+		/* On initialise le premier point correspond au centre de l'ovale et un deuxieme à la même hauteur pour avoir une ligne droite au départ */
+        points.add(new Point(Affichage.MIDX_OVAL, MIDY_OVAL));
+        X_ESPACE += ESPACE;
+        points.add(new Point(Affichage.MIDX_OVAL + ESPACE, MIDY_OVAL));
         X_ESPACE += ESPACE;
         /* On initialise les points suivants jusqu'au dernier point qui dépasse l'écran de jeu */
         while(X_ESPACE <= Affichage.LARG + ESPACE) {
