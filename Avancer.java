@@ -3,6 +3,7 @@ public class Avancer extends Thread {
 	private Affichage affichage;
 	private Parcours parcours;
 	
+	/* La ligne brisée avance tout les "timer" temps (en ms) */
 	public int timer = 200;
 	
 	/* Constructeur de la classe Voler */
