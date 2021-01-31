@@ -19,6 +19,8 @@ public class Affichage extends JPanel {
         public static final int MID_LARG = LARG/2;
         public static final int H_SCORE = 20;
         
+        public static boolean boucle = true;
+        
         //private String score = "Score :" + parcours.getPosition() ; /* J'ai voulu rajouter + parcours.getPosition() sauf que le jeu plante pour l'affichage du nombre */
         
         
