@@ -4,6 +4,9 @@ public class Stop extends Thread {
 	
 	private Etat etat;
 	
+	/* On test si on a perdu tout les "timer" temps (en ms) */
+	public int timer = 500;
+	
 	/* Constructeur de la classe Stop */
 	
 	public Stop(Etat etat) {
@@ -15,12 +18,12 @@ public class Stop extends Thread {
 	@Override
 	public void run() {
 		while(Affichage.boucle) {
-			if(etat.testPerdu()) {
+			if(etat.testPerdu()) { /* Boucle permettant d'envoyer un message de retour dans une nouvelle fenêtre avec le score du joueur et permettant aussi de fermer les threads courants */
 				JOptionPane.showMessageDialog(null,"Votre score est de : " + Parcours.position,"GAME OVER",JOptionPane.PLAIN_MESSAGE);
 				Affichage.boucle = false;
 			}	
 			try {
-				Thread.sleep(500);
+				Thread.sleep(timer);
 			} catch (Exception e){
 				e.printStackTrace();
 			}
